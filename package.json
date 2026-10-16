@@ -1,0 +1,25 @@
+{
+  "name": "nexura-os",
+  "version": "3.0.0",
+  "description": "Nexura OS - Intelligent Commerce Operating System for Bangladesh. Founded by Md Minhazul- Islam.",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Minhaz0100/nexura-os.git"
+  },
+  "keywords": [
+    "ecommerce",
+    "business-os",
+    "fraud-shield",
+    "courier-automation"
+  ],
+  "author": "Md Minhazul- Islam",
+  "license": "ISC",
+  "dependencies": {
+    "cors": "^2.8.5",
+    "express": "^5.0.1"
+  }
+}

@@ -1,0 +1,536 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Merchant Command Center - Nexura OS v3.0</title>
+  
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='25' fill='%234F46E5'/><path d='M25 75V25l30 35V25h20v50L45 40v35z' fill='%23FFF'/></svg>">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <link rel="stylesheet" href="styles.css">
+
+  <style>
+    /* Merchant Dashboard Custom Layout */
+    .admin-wrapper {
+      display: grid;
+      grid-template-columns: 260px 1fr;
+      min-height: 100vh;
+      background: #070B14;
+    }
+
+    .admin-sidebar {
+      background: #0A0F1D;
+      border-right: 1px solid var(--border-subtle);
+      padding: 24px 18px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+
+    .admin-nav-item {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      padding: 11px 14px;
+      border-radius: var(--radius-md);
+      color: var(--text-secondary);
+      font-size: 13.5px;
+      font-weight: 700;
+      transition: all 0.2s ease;
+      cursor: pointer;
+      margin-bottom: 4px;
+    }
+
+    .admin-nav-item:hover, .admin-nav-item.active {
+      background: rgba(79, 70, 229, 0.15);
+      color: #818CF8;
+      border: 1px solid rgba(79, 70, 229, 0.3);
+    }
+
+    .admin-main {
+      padding: 30px 40px;
+      overflow-y: auto;
+    }
+
+    .admin-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 30px;
+      padding-bottom: 20px;
+      border-bottom: 1px solid var(--border-subtle);
+    }
+
+    .filter-btn-group {
+      display: flex;
+      gap: 8px;
+      margin-bottom: 20px;
+      flex-wrap: wrap;
+    }
+
+    .filter-btn {
+      padding: 7px 16px;
+      border-radius: var(--radius-full);
+      font-size: 12.5px;
+      font-weight: 700;
+      background: rgba(255, 255, 255, 0.05);
+      border: 1px solid var(--border-subtle);
+      color: var(--text-secondary);
+      cursor: pointer;
+    }
+
+    .filter-btn.active {
+      background: var(--primary);
+      color: #FFF;
+      border-color: var(--primary-light);
+    }
+
+    .order-action-btn {
+      padding: 5px 10px;
+      border-radius: 6px;
+      font-size: 11.5px;
+      font-weight: 700;
+      cursor: pointer;
+      display: inline-flex;
+      align-items: center;
+      gap: 4px;
+    }
+
+    .btn-dispatch {
+      background: rgba(16, 185, 129, 0.15);
+      border: 1px solid rgba(16, 185, 129, 0.3);
+      color: #34D399;
+    }
+
+    .btn-dispatch:hover {
+      background: var(--emerald);
+      color: #FFF;
+    }
+
+    .btn-print {
+      background: rgba(255, 255, 255, 0.06);
+      border: 1px solid var(--border-subtle);
+      color: var(--text-main);
+    }
+
+    .btn-print:hover {
+      background: rgba(255, 255, 255, 0.15);
+    }
+
+    /* Print Preview Slip Modal */
+    .slip-box {
+      background: #FFF;
+      color: #000;
+      border-radius: 12px;
+      padding: 24px;
+      max-width: 380px;
+      width: 100%;
+      font-family: monospace;
+      box-shadow: 0 10px 40px rgba(0,0,0,0.8);
+    }
+  </style>
+</head>
+<body>
+
+  <div class="admin-wrapper">
+    <!-- Sidebar -->
+    <aside class="admin-sidebar">
+      <div>
+        <a href="index.html" class="brand-logo" style="margin-bottom: 28px;">
+          <div class="brand-icon"><i class="fa-solid fa-cube"></i></div>
+          <div class="brand-text">
+            <div class="brand-name">Nexura <span class="brand-badge">OS</span></div>
+            <span class="brand-sub">Merchant Center</span>
+          </div>
+        </a>
+
+        <div style="margin-bottom: 24px; padding: 12px; background: rgba(255,255,255,0.03); border: 1px solid var(--border-subtle); border-radius: var(--radius-md);">
+          <div style="font-size: 11px; text-transform: uppercase; color: var(--text-muted); font-weight: 800;">Logged In Merchant</div>
+          <div style="font-weight: 900; font-size: 14px; margin-top: 2px;">Md Minhazul- Islam</div>
+          <div style="font-size: 11px; color: var(--emerald);"><i class="fa-solid fa-circle-check"></i> Founder & Super Admin</div>
+        </div>
+
+        <nav>
+          <div class="admin-nav-item active"><i class="fa-solid fa-chart-pie"></i> Overview Dashboard</div>
+          <div class="admin-nav-item" onclick="document.getElementById('ordersSection').scrollIntoView({behavior: 'smooth'})"><i class="fa-solid fa-cart-shopping"></i> Real-Time Orders</div>
+          <div class="admin-nav-item" onclick="openSimulationModal()"><i class="fa-solid fa-plus-circle"></i> New Test Order</div>
+          <div class="admin-nav-item" onclick="window.open('/api/status', '_blank')"><i class="fa-solid fa-server"></i> Backend API Health</div>
+          <div class="admin-nav-item" onclick="window.location.href='index.html'"><i class="fa-solid fa-store"></i> View Live Storefront</div>
+        </nav>
+      </div>
+
+      <div>
+        <div style="font-size: 12px; color: var(--text-muted); padding: 10px 0; border-top: 1px solid var(--border-subtle);">
+          Nexura Engine: <span style="color: var(--emerald); font-weight: 700;">Active 🟢</span><br>
+          Port: <strong>3000</strong>
+        </div>
+      </div>
+    </aside>
+
+    <!-- Main Content Area -->
+    <main class="admin-main">
+      <div class="admin-header">
+        <div>
+          <h1 style="font-size: 26px; font-weight: 900;">Merchant Command Center</h1>
+          <p style="font-size: 13.5px; color: var(--text-secondary);">Real-time database records & backend automation console.</p>
+        </div>
+        <div style="display: flex; gap: 12px; align-items: center;">
+          <button class="btn-primary" onclick="openSimulationModal()">
+            <i class="fa-solid fa-cart-plus"></i> Simulate Customer Order
+          </button>
+          <button class="btn-secondary" onclick="loadBackendData()">
+            <i class="fa-solid fa-arrows-rotate"></i> Refresh API
+          </button>
+        </div>
+      </div>
+
+      <!-- Real-Time Metrics Cards from API -->
+      <div class="stat-cards-grid">
+        <div class="stat-card">
+          <div class="stat-header">
+            <span class="stat-label">Total Real Gross Sales</span>
+            <div class="stat-icon icon-blue"><i class="fa-solid fa-bangladeshi-taka-sign"></i></div>
+          </div>
+          <div class="stat-value" id="kpiSales">৳0</div>
+          <div class="stat-subtext"><span class="badge-growth" id="kpiGrowth">+28.4%</span> live database sum</div>
+        </div>
+
+        <div class="stat-card">
+          <div class="stat-header">
+            <span class="stat-label">Verified Orders</span>
+            <div class="stat-icon icon-cyan"><i class="fa-solid fa-clipboard-check"></i></div>
+          </div>
+          <div class="stat-value" id="kpiOrders">0 Orders</div>
+          <div class="stat-subtext"><span class="badge-growth"><i class="fa-solid fa-check"></i> 100%</span> valid customers</div>
+        </div>
+
+        <div class="stat-card">
+          <div class="stat-header">
+            <span class="stat-label">Courier Consignments</span>
+            <div class="stat-icon icon-green"><i class="fa-solid fa-truck-fast"></i></div>
+          </div>
+          <div class="stat-value" id="kpiDispatched">0 Parcels</div>
+          <div class="stat-subtext"><span class="badge-growth"><i class="fa-solid fa-bolt"></i> Pathao & Steadfast</span></div>
+        </div>
+
+        <div class="stat-card">
+          <div class="stat-header">
+            <span class="stat-label">FraudShield™ Losses Saved</span>
+            <div class="stat-icon icon-rose"><i class="fa-solid fa-shield-virus"></i></div>
+          </div>
+          <div class="stat-value" id="kpiRtsSaved">৳0</div>
+          <div class="stat-subtext"><span class="badge-prevented" id="kpiFraudCount">0 Blocked</span> serial returners</div>
+        </div>
+      </div>
+
+      <!-- Orders Table Section -->
+      <section id="ordersSection" style="margin-top: 36px;">
+        <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 16px;">
+          <h2 style="font-size: 20px; font-weight: 800;"><i class="fa-solid fa-boxes-packing"></i> Live Customer Orders</h2>
+          <span style="font-size: 13px; color: var(--text-muted); font-family: var(--font-mono);" id="orderCountBadge">Loading...</span>
+        </div>
+
+        <!-- Filter Chips -->
+        <div class="filter-btn-group">
+          <button class="filter-btn active" onclick="filterOrders('all', this)">All Orders</button>
+          <button class="filter-btn" onclick="filterOrders('verified', this)">Verified</button>
+          <button class="filter-btn" onclick="filterOrders('in-transit', this)">In-Transit</button>
+          <button class="filter-btn" onclick="filterOrders('dispatched', this)">Dispatched</button>
+          <button class="filter-btn" onclick="filterOrders('fraud-blocked', this)">Fraud Blocked</button>
+        </div>
+
+        <div style="background: var(--bg-card); border: 1px solid var(--border-subtle); border-radius: var(--radius-lg); overflow: hidden;">
+          <table class="orders-table" style="width: 100%;">
+            <thead>
+              <tr style="background: rgba(15, 23, 42, 0.6);">
+                <th style="padding: 16px;">Order ID</th>
+                <th>Customer & Phone</th>
+                <th>City & Address</th>
+                <th>Items Ordered</th>
+                <th>Amount</th>
+                <th>Fraud Score</th>
+                <th>Status</th>
+                <th style="text-align: right; padding-right: 20px;">Automated Actions</th>
+              </tr>
+            </thead>
+            <tbody id="ordersTableBody">
+              <tr>
+                <td colspan="8" style="text-align: center; padding: 40px; color: var(--text-muted);">
+                  <i class="fa-solid fa-spinner fa-spin"></i> Fetching live orders from Nexura backend API...
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </section>
+    </main>
+  </div>
+
+  <!-- Modal: Simulate Customer Order -->
+  <div class="modal-overlay" id="orderModal">
+    <div class="modal-box">
+      <button class="modal-close-btn" onclick="closeSimulationModal()"><i class="fa-solid fa-xmark"></i></button>
+      <h3 style="font-size: 20px; font-weight: 900; margin-bottom: 6px;">Simulate Customer Checkout</h3>
+      <p style="font-size: 13px; color: var(--text-secondary); margin-bottom: 20px;">
+        This submits a real order to <code>POST /api/orders</code> to test FraudShield and courier dispatch.
+      </p>
+
+      <form id="newOrderForm" onsubmit="submitNewOrder(event)">
+        <div style="margin-bottom: 12px;">
+          <label style="font-size: 12px; font-weight: 700; color: var(--text-muted);">Customer Full Name</label>
+          <input type="text" id="custName" class="phone-test-input" style="width: 100%;" value="Kamrul Hasan" required>
+        </div>
+
+        <div style="margin-bottom: 12px;">
+          <label style="font-size: 12px; font-weight: 700; color: var(--text-muted);">Mobile Number</label>
+          <input type="text" id="custPhone" class="phone-test-input" style="width: 100%;" value="01712345678" placeholder="Use 01999888777 to test Fraud Block" required>
+        </div>
+
+        <div style="margin-bottom: 12px;">
+          <label style="font-size: 12px; font-weight: 700; color: var(--text-muted);">City / District</label>
+          <input type="text" id="custCity" class="phone-test-input" style="width: 100%;" value="Dhanmondi, Dhaka" required>
+        </div>
+
+        <div style="margin-bottom: 12px;">
+          <label style="font-size: 12px; font-weight: 700; color: var(--text-muted);">Item Description</label>
+          <input type="text" id="custItems" class="phone-test-input" style="width: 100%;" value="Premium Linen Panjabi (Navy Blue)" required>
+        </div>
+
+        <div style="margin-bottom: 20px;">
+          <label style="font-size: 12px; font-weight: 700; color: var(--text-muted);">COD Amount (BDT)</label>
+          <input type="number" id="custAmount" class="phone-test-input" style="width: 100%;" value="2450" required>
+        </div>
+
+        <button type="submit" class="btn-primary" style="width: 100%; justify-content: center; padding: 12px;">
+          <i class="fa-solid fa-paper-plane"></i> Place Real Order via Backend API
+        </button>
+      </form>
+    </div>
+  </div>
+
+  <!-- Modal: Print POS Thermal Shipping Slip -->
+  <div class="modal-overlay" id="slipModal">
+    <div class="slip-box">
+      <div style="display: flex; justify-content: space-between; border-bottom: 2px dashed #000; padding-bottom: 10px; margin-bottom: 12px;">
+        <div>
+          <strong style="font-size: 16px;">NEXURA EXPRESS</strong><br>
+          <small>Merchant: Md Minhazul- Islam</small>
+        </div>
+        <div style="text-align: right;">
+          <span style="font-size: 11px; font-weight: bold; background: #000; color: #FFF; padding: 2px 6px;">COD</span>
+        </div>
+      </div>
+
+      <div style="margin-bottom: 12px; font-size: 13px;">
+        <div><strong>Consignment:</strong> <span id="slipConsignment">NX-PT-903841</span></div>
+        <div><strong>Order ID:</strong> <span id="slipOrderId">#NX-9482</span></div>
+        <div><strong>Recipient:</strong> <span id="slipCustomer">Rafiqul Islam</span></div>
+        <div><strong>Phone:</strong> <span id="slipPhone">01711223344</span></div>
+        <div><strong>Address:</strong> <span id="slipAddress">House 14, Road 5, Mirpur 10</span></div>
+      </div>
+
+      <div style="border-top: 2px dashed #000; border-bottom: 2px dashed #000; padding: 10px 0; margin-bottom: 12px; text-align: center;">
+        <i class="fa-solid fa-barcode" style="font-size: 48px;"></i><br>
+        <strong style="letter-spacing: 3px;" id="slipBarcodeText">PT-903841</strong>
+      </div>
+
+      <div style="display: flex; justify-content: space-between; font-weight: bold; font-size: 14px;">
+        <span>Collect COD:</span>
+        <span id="slipAmount">৳2,450</span>
+      </div>
+
+      <div style="margin-top: 20px; display: flex; gap: 8px;">
+        <button onclick="window.print()" style="flex: 1; padding: 10px; background: #000; color: #FFF; border: none; font-weight: bold; cursor: pointer; border-radius: 6px;">
+          Print Slip
+        </button>
+        <button onclick="document.getElementById('slipModal').classList.remove('active')" style="padding: 10px; background: #EEE; color: #000; border: none; cursor: pointer; border-radius: 6px;">
+          Close
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    // Dashboard Frontend Logic
+    let allOrders = [];
+
+    async function loadBackendData() {
+      try {
+        // 1. Fetch Metrics
+        const metricsRes = await fetch('/api/dashboard/metrics');
+        if (metricsRes.ok) {
+          const metrics = await metricsRes.json();
+          document.getElementById('kpiSales').textContent = metrics.totalSalesFormatted;
+          document.getElementById('kpiOrders').textContent = metrics.verifiedOrdersCount + " Orders";
+          document.getElementById('kpiDispatched').textContent = metrics.dispatchedCount + " Parcels";
+          document.getElementById('kpiRtsSaved').textContent = metrics.estimatedRtsSavedFormatted;
+          document.getElementById('kpiFraudCount').textContent = metrics.fraudBlockedCount + " Blocked";
+        }
+
+        // 2. Fetch Orders
+        const ordersRes = await fetch('/api/orders');
+        if (ordersRes.ok) {
+          const data = await ordersRes.json();
+          allOrders = data.orders;
+          renderOrders(allOrders);
+          document.getElementById('orderCountBadge').textContent = `Total: ${allOrders.length} orders in database`;
+        }
+      } catch (err) {
+        console.error("Backend fetch error:", err);
+      }
+    }
+
+    function renderOrders(orders) {
+      const tbody = document.getElementById('ordersTableBody');
+      if (!orders.length) {
+        tbody.innerHTML = `<tr><td colspan="8" style="text-align: center; padding: 30px; color: var(--text-muted);">No orders found matching this filter.</td></tr>`;
+        return;
+      }
+
+      tbody.innerHTML = orders.map(o => {
+        let statusBadgeClass = 'status-verified';
+        if (o.status === 'Fraud-Blocked') statusBadgeClass = 'status-fraud-blocked';
+        else if (o.status === 'In-Transit') statusBadgeClass = 'status-steadfast';
+        else if (o.status === 'Dispatched') statusBadgeClass = 'status-pathao';
+
+        const isBlocked = o.status === 'Fraud-Blocked';
+
+        return `
+          <tr>
+            <td style="font-family: var(--font-mono); font-weight: 800; color: #818CF8; padding: 14px 16px;">
+              ${o.id}
+            </td>
+            <td>
+              <strong>${o.customerName}</strong><br>
+              <small style="color: var(--text-muted); font-family: var(--font-mono);">${o.phone}</small>
+            </td>
+            <td>
+              <span>${o.city}</span><br>
+              <small style="color: var(--text-muted); font-size: 11px;">${o.address.substring(0, 30)}...</small>
+            </td>
+            <td>
+              <span style="font-size: 12.5px;">${o.items}</span>
+            </td>
+            <td style="font-weight: 800; font-size: 14px;">
+              ৳${Number(o.amount).toLocaleString()}
+            </td>
+            <td>
+              <span style="font-weight: 800; color: ${o.fraudScore > 70 ? 'var(--emerald)' : 'var(--rose)'};">
+                ${o.fraudScore}/100
+              </span>
+            </td>
+            <td>
+              <span class="badge-status ${statusBadgeClass}">${o.status}</span>
+            </td>
+            <td style="text-align: right; padding-right: 20px;">
+              ${!isBlocked ? `
+                <button class="order-action-btn btn-dispatch" onclick="dispatchOrder('${o.id}', '${o.customerName}', '${o.phone}', '৳${o.amount}')">
+                  <i class="fa-solid fa-truck-fast"></i> ${o.consignmentId ? 'Re-Dispatch' : 'Dispatch'}
+                </button>
+                <button class="order-action-btn btn-print" onclick="printSlip('${o.id}', '${o.customerName}', '${o.phone}', '${o.address}', '৳${o.amount}', '${o.consignmentId || 'NX-PT-903841'}')">
+                  <i class="fa-solid fa-print"></i> Slip
+                </button>
+              ` : `
+                <span style="font-size: 11px; color: var(--rose); font-weight: 700;"><i class="fa-solid fa-ban"></i> Blocked by AI</span>
+              `}
+            </td>
+          </tr>
+        `;
+      }).join('');
+    }
+
+    function filterOrders(status, btn) {
+      document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
+      btn.classList.add('active');
+
+      if (status === 'all') {
+        renderOrders(allOrders);
+      } else {
+        const filtered = allOrders.filter(o => o.status.toLowerCase().replace(/\s+/g, '-') === status.toLowerCase());
+        renderOrders(filtered);
+      }
+    }
+
+    async function dispatchOrder(orderId, name, phone, amount) {
+      try {
+        const res = await fetch('/api/courier/book', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({
+            orderId: orderId,
+            courier: 'pathao',
+            recipientName: name,
+            recipientPhone: phone,
+            amount: amount
+          })
+        });
+
+        if (res.ok) {
+          const data = await res.json();
+          alert(`Consignment booked with Pathao!\nTracking ID: ${data.consignmentId}\nSMS sent to customer.`);
+          loadBackendData();
+        }
+      } catch (err) {
+        alert("Courier API connection error: " + err.message);
+      }
+    }
+
+    function printSlip(orderId, customer, phone, address, amount, consignment) {
+      document.getElementById('slipOrderId').textContent = orderId;
+      document.getElementById('slipCustomer').textContent = customer;
+      document.getElementById('slipPhone').textContent = phone;
+      document.getElementById('slipAddress').textContent = address;
+      document.getElementById('slipAmount').textContent = amount;
+      document.getElementById('slipConsignment').textContent = consignment;
+      document.getElementById('slipBarcodeText').textContent = consignment;
+
+      document.getElementById('slipModal').classList.add('active');
+    }
+
+    function openSimulationModal() {
+      document.getElementById('orderModal').classList.add('active');
+    }
+
+    function closeSimulationModal() {
+      document.getElementById('orderModal').classList.remove('active');
+    }
+
+    async function submitNewOrder(e) {
+      e.preventDefault();
+      const payload = {
+        customerName: document.getElementById('custName').value,
+        phone: document.getElementById('custPhone').value,
+        city: document.getElementById('custCity').value,
+        address: document.getElementById('custCity').value,
+        items: document.getElementById('custItems').value,
+        amount: document.getElementById('custAmount').value,
+        paymentMethod: "Cash on Delivery"
+      };
+
+      try {
+        const res = await fetch('/api/orders', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify(payload)
+        });
+
+        if (res.ok) {
+          const result = await res.json();
+          closeSimulationModal();
+          if (result.order.status === 'Fraud-Blocked') {
+            alert(`Order Placed: ${result.order.id}\nALERT: FraudShield flagged this order as HIGH RISK! Status set to Fraud-Blocked.`);
+          } else {
+            alert(`Order Placed Successfully: ${result.order.id}\nStatus: Verified and ready for dispatch!`);
+          }
+          loadBackendData();
+        }
+      } catch (err) {
+        alert("Error creating order: " + err.message);
+      }
+    }
+
+    // Load initial data
+    loadBackendData();
+  </script>
+</body>
+</html>

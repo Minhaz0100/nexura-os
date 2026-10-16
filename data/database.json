@@ -1,0 +1,129 @@
+{
+  "merchants": [
+    {
+      "id": "M-001",
+      "name": "Md Minhazul- Islam",
+      "phone": "01700000000",
+      "storeName": "Nexura Flagship Brand",
+      "role": "founder_admin",
+      "plan": "Market Dominator VIP",
+      "createdAt": "2026-10-16T16:43:34.623Z"
+    }
+  ],
+  "orders": [
+    {
+      "id": "NX-9482",
+      "customerName": "Rafiqul Islam",
+      "phone": "01711223344",
+      "city": "Dhaka (Mirpur 10)",
+      "address": "House 14, Road 5, Block B, Mirpur 10, Dhaka",
+      "items": "Premium Linen Panjabi (Size: L)",
+      "amount": 2450,
+      "paymentMethod": "Cash on Delivery",
+      "status": "Verified",
+      "courier": "Pathao Express",
+      "consignmentId": "NX-PT-903841",
+      "fraudScore": 98,
+      "riskLevel": "SAFE",
+      "createdAt": "2026-10-16T16:28:34.624Z"
+    },
+    {
+      "id": "NX-9481",
+      "customerName": "Farzana Akter",
+      "phone": "01819556677",
+      "city": "Chittagong (Agrabad)",
+      "address": "Flat 4B, Green Villa, Agrabad C/A, Chittagong",
+      "items": "Organic Saffron Glow Serum",
+      "amount": 1890,
+      "paymentMethod": "Cash on Delivery",
+      "status": "In-Transit",
+      "courier": "Steadfast Courier",
+      "consignmentId": "NX-ST-882012",
+      "fraudScore": 94,
+      "riskLevel": "SAFE",
+      "createdAt": "2026-10-16T15:58:34.624Z"
+    },
+    {
+      "id": "NX-9480",
+      "customerName": "Suspicious User",
+      "phone": "01999888777",
+      "city": "Gazipur",
+      "address": "Chourasta, Gazipur",
+      "items": "Smart Watch T900 Ultra (x3)",
+      "amount": 5400,
+      "paymentMethod": "Cash on Delivery",
+      "status": "Fraud-Blocked",
+      "courier": "None",
+      "consignmentId": null,
+      "fraudScore": 14,
+      "riskLevel": "HIGH_RISK",
+      "reason": "Serial Returner: 7 RTS orders across Pathao/Steadfast in last 30 days",
+      "createdAt": "2026-10-16T15:13:34.624Z"
+    },
+    {
+      "id": "NX-9479",
+      "customerName": "Mehedi Hasan",
+      "phone": "01755123456",
+      "city": "Sylhet (Zindabazar)",
+      "address": "Amberkhana Road, Zindabazar, Sylhet",
+      "items": "Mechanical Gaming Keyboard RGB",
+      "amount": 4200,
+      "paymentMethod": "Cash on Delivery",
+      "status": "Dispatched",
+      "courier": "Pathao Express",
+      "consignmentId": "NX-PT-903838",
+      "fraudScore": 96,
+      "riskLevel": "SAFE",
+      "createdAt": "2026-10-16T13:43:34.624Z"
+    }
+  ],
+  "products": [
+    {
+      "id": "PROD-1",
+      "name": "Premium Linen Royal Panjabi",
+      "price": 2450,
+      "stock": 84,
+      "category": "Fashion",
+      "salesCount": 312
+    },
+    {
+      "id": "PROD-2",
+      "name": "Ultra-Fast Wireless ANC Earbuds",
+      "price": 1890,
+      "stock": 42,
+      "category": "Gadgets",
+      "salesCount": 198
+    },
+    {
+      "id": "PROD-3",
+      "name": "Organic Pure Saffron Radiance Serum",
+      "price": 1490,
+      "stock": 120,
+      "category": "Beauty",
+      "salesCount": 420
+    }
+  ],
+  "fraudBlacklist": {
+    "01999888777": {
+      "returnRate": "88%",
+      "refusalCount": 8,
+      "riskScore": 14,
+      "status": "SERIAL_REFUSER"
+    },
+    "01812345678": {
+      "returnRate": "35%",
+      "refusalCount": 2,
+      "riskScore": 65,
+      "status": "MODERATE_RISK"
+    }
+  },
+  "settings": {
+    "storeName": "Nexura Demo Store",
+    "founder": "Md Minhazul- Islam",
+    "pathaoApiKey": "pt_live_9048a123bc",
+    "steadfastApiKey": "st_live_7721fd89",
+    "metaPixelId": "910283746129845",
+    "serverCapiEnabled": true,
+    "fraudProtectionActive": true
+  }
+}
