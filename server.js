@@ -459,12 +459,16 @@ app.use((req, res) => {
 });
 
 // Start Express Server
-app.listen(PORT, () => {
-  console.log(`====================================================`);
-  console.log(`🚀 NEXURA OS v3.0 Backend Server is Live & Active!`);
-  console.log(`👤 Founded & Architected by: Md Minhazul- Islam`);
-  console.log(`📡 Local Access: http://localhost:${PORT}`);
-  console.log(`📊 Merchant Portal: http://localhost:${PORT}/dashboard.html`);
-  console.log(`⚡ API Endpoints: http://localhost:${PORT}/api/status`);
-  console.log(`====================================================`);
-});
+if (require.main === module) {
+  app.listen(PORT, () => {
+    console.log(`====================================================`);
+    console.log(`🚀 NEXURA OS v3.0 Backend Server is Live & Active!`);
+    console.log(`👤 Founded & Architected by: Md Minhazul- Islam`);
+    console.log(`📡 Local Access: http://localhost:${PORT}`);
+    console.log(`📊 Merchant Portal: http://localhost:${PORT}/dashboard.html`);
+    console.log(`⚡ API Endpoints: http://localhost:${PORT}/api/status`);
+    console.log(`====================================================`);
+  });
+}
+
+module.exports = app;
