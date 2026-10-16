@@ -1,0 +1,1059 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+  <title>Nexura OS v3.0 - The #1 Intelligent Commerce Operating System for Bangladesh</title>
+  <meta name="description" content="Nexura OS is the ultimate business OS for online sellers in Bangladesh. Founded by Md Minhazul- Islam. High-converting landing pages, Meta CAPI server tracking, Pathao & Steadfast 1-click courier automation, and AI Fraud Shield.">
+  
+  <!-- Favicon & Brand Icons -->
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='25' fill='%234F46E5'/><path d='M25 75V25l30 35V25h20v50L45 40v35z' fill='%23FFF'/></svg>">
+  
+  <!-- FontAwesome 6.5.2 -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" crossorigin="anonymous" referrerpolicy="no-referrer" />
+  
+  <!-- Custom Modern Stylesheet -->
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+  <!-- Ambient Mesh Glow Background -->
+  <div class="ambient-mesh">
+    <div class="mesh-blob blob-1"></div>
+    <div class="mesh-blob blob-2"></div>
+    <div class="mesh-blob blob-3"></div>
+  </div>
+
+  <!-- Announcement Bar -->
+  <div class="announcement-bar">
+    <div class="announcement-content">
+      <div>
+        <span class="announcement-badge">NEXURA 3.0</span>
+        <span data-i18n="announcement">⚡ Nexura OS 3.0 Live: Automated Pathao & Steadfast Courier API + Meta CAPI Server Tracking Enabled</span>
+      </div>
+      <div class="announcement-right">
+        <button class="lang-switch-btn" id="langSwitchBtn" aria-label="Toggle Language">
+          <i class="fa-solid fa-language"></i> <span>বাংলা</span>
+        </button>
+        <button class="theme-switch-btn" id="themeSwitchBtn" aria-label="Toggle Theme">
+          <i class="fa-solid fa-sun"></i> <span>Light</span>
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Main Sticky Header -->
+  <header class="site-header" id="siteHeader">
+    <div class="container nav-container">
+      <a href="index.html" class="brand-logo" aria-label="Nexura OS Homepage">
+        <div class="brand-icon">
+          <i class="fa-solid fa-cube"></i>
+        </div>
+        <div class="brand-text">
+          <div class="brand-name">
+            Nexura <span class="brand-badge">OS 3.0</span>
+          </div>
+          <span class="brand-sub">Intelligent Commerce OS</span>
+        </div>
+      </a>
+
+      <!-- Desktop Navigation Links -->
+      <nav class="nav-links">
+        <div class="nav-item">
+          <a href="index.html" class="nav-link active"><i class="fa-solid fa-house"></i> Home</a>
+        </div>
+        <div class="nav-item">
+          <a href="features.html" class="nav-link"><i class="fa-solid fa-wand-magic-sparkles"></i> Features</a>
+        </div>
+        <div class="nav-item">
+          <a href="templates.html" class="nav-link"><i class="fa-solid fa-palette"></i> Demos & Templates</a>
+        </div>
+        <div class="nav-item">
+          <a href="#founder" class="nav-link"><i class="fa-solid fa-user-tie"></i> Founder</a>
+        </div>
+        <div class="nav-item">
+          <a href="#calculator" class="nav-link"><i class="fa-solid fa-calculator"></i> ROI Calculator</a>
+        </div>
+        <div class="nav-item">
+          <a href="pricing.html" class="nav-link"><i class="fa-solid fa-tags"></i> Pricing</a>
+        </div>
+        <div class="nav-item">
+          <a href="#faq" class="nav-link"><i class="fa-solid fa-circle-question"></i> FAQ</a>
+        </div>
+      </nav>
+
+      <!-- Nav CTA Actions -->
+      <div class="nav-actions">
+        <a href="#login" class="btn-secondary trigger-signup-modal"><i class="fa-regular fa-user"></i> Login</a>
+        <a href="#start" class="btn-primary trigger-signup-modal">
+          <i class="fa-solid fa-rocket"></i> <span data-i18n="cta_trial">Start 7-Day Free</span>
+        </a>
+        <button class="mobile-toggle-btn" id="mobileMenuToggle" aria-label="Open mobile menu">
+          <i class="fa-solid fa-bars"></i>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- Hero Section -->
+  <section class="hero-section">
+    <div class="container">
+      <div class="hero-pill">
+        <span class="dot"></span>
+        <span data-i18n="hero_pill">Founded by Md Minhazul- Islam • The #1 Commerce OS for Bangladesh</span>
+      </div>
+      
+      <h1 class="hero-title" data-i18n="hero_title">
+        Build Faster. Eliminate Fake Orders. <span class="text-gradient">Automate Your Entire Commerce Empire.</span>
+      </h1>
+
+      <p class="hero-subtitle" data-i18n="hero_sub">
+        From high-converting 0.8s landing pages and Meta Server-Side CAPI to automated courier dispatch (Pathao, Steadfast, RedX) and AI fraud defense — Nexura OS eliminates 90% of manual chaos.
+      </p>
+
+      <div class="hero-cta-group">
+        <button class="btn-primary btn-lg trigger-signup-modal">
+          <i class="fa-solid fa-rocket"></i> <span data-i18n="cta_trial">Start 7-Day Free Trial</span>
+        </button>
+        <a href="#simulator" class="btn-secondary btn-lg">
+          <i class="fa-solid fa-play"></i> <span data-i18n="cta_demo">Try Live Simulator</span>
+        </a>
+      </div>
+
+      <div class="hero-trust-badges">
+        <span><i class="fa-solid fa-circle-check"></i> <strong data-i18n="badge_merchants">5,200+ Active Brands</strong></span>
+        <span><i class="fa-solid fa-shield-halved"></i> <strong data-i18n="badge_fraud">99.4% Fake Order Shield</strong></span>
+        <span><i class="fa-solid fa-bolt"></i> <strong data-i18n="badge_speed">0.8s Ultra-Fast Funnel</strong></span>
+        <span><i class="fa-solid fa-credit-card"></i> <strong>No Credit Card Required</strong></span>
+      </div>
+
+      <!-- High-Fidelity Interactive Dashboard Mockup -->
+      <div class="dashboard-preview-wrapper">
+        <div class="dashboard-glass-frame">
+          <div class="dashboard-topbar">
+            <div class="window-dots">
+              <span class="dot-btn dot-red"></span>
+              <span class="dot-btn dot-yellow"></span>
+              <span class="dot-btn dot-green"></span>
+            </div>
+            <div class="dashboard-tab-bar">
+              <button class="dash-tab-btn active" data-view="overview"><i class="fa-solid fa-chart-line"></i> Live Stream</button>
+              <button class="dash-tab-btn" data-view="fraud"><i class="fa-solid fa-shield-cat"></i> FraudShield™</button>
+              <button class="dash-tab-btn" data-view="courier"><i class="fa-solid fa-truck-fast"></i> 1-Click Courier</button>
+              <button class="dash-tab-btn" data-view="tracking"><i class="fa-solid fa-crosshairs"></i> Pixel Pilot (CAPI)</button>
+            </div>
+            <div class="dashboard-status-indicator">
+              <span class="pulse-green"></span>
+              <span>Nexura Cloud Core: Online (99.99%)</span>
+            </div>
+          </div>
+
+          <div class="dashboard-content-area">
+            <!-- 4 Live Metric KPI Cards -->
+            <div class="stat-cards-grid">
+              <div class="stat-card">
+                <div class="stat-header">
+                  <span class="stat-label">Today's Gross Sales</span>
+                  <div class="stat-icon icon-blue"><i class="fa-solid fa-bangladeshi-taka-sign"></i></div>
+                </div>
+                <div class="stat-value">৳184,500</div>
+                <div class="stat-subtext"><span class="badge-growth"><i class="fa-solid fa-arrow-trend-up"></i> +28.4%</span> vs yesterday</div>
+              </div>
+
+              <div class="stat-card">
+                <div class="stat-header">
+                  <span class="stat-label">Verified Real Orders</span>
+                  <div class="stat-icon icon-cyan"><i class="fa-solid fa-cart-shopping"></i></div>
+                </div>
+                <div class="stat-value">312 Orders</div>
+                <div class="stat-subtext"><span class="badge-growth"><i class="fa-solid fa-check"></i> 99.2%</span> verified clean</div>
+              </div>
+
+              <div class="stat-card">
+                <div class="stat-header">
+                  <span class="stat-label">Courier Auto-Synced</span>
+                  <div class="stat-icon icon-green"><i class="fa-solid fa-truck"></i></div>
+                </div>
+                <div class="stat-value">298 Parcels</div>
+                <div class="stat-subtext"><span class="badge-growth"><i class="fa-solid fa-bolt"></i> 3.2s</span> avg dispatch speed</div>
+              </div>
+
+              <div class="stat-card">
+                <div class="stat-header">
+                  <span class="stat-label">Fake Orders Blocked</span>
+                  <div class="stat-icon icon-rose"><i class="fa-solid fa-shield-virus"></i></div>
+                </div>
+                <div class="stat-value">42 Blocked</div>
+                <div class="stat-subtext"><span class="badge-prevented"><i class="fa-solid fa-coins"></i> ৳38,200</span> loss prevented</div>
+              </div>
+            </div>
+
+            <!-- Interactive Panel with Live Order Table -->
+            <div class="panel-card">
+              <div class="panel-title">
+                <span id="dashPanelTitle">Real-time Verified Orders Stream</span>
+                <span style="font-size: 12px; color: var(--emerald); font-weight: 700;"><i class="fa-solid fa-circle-dot"></i> Live Feed</span>
+              </div>
+              <table class="orders-table">
+                <thead>
+                  <tr>
+                    <th>Order ID</th>
+                    <th>Customer & City</th>
+                    <th>Amount</th>
+                    <th>Automated Action</th>
+                  </tr>
+                </thead>
+                <tbody id="dashOrdersTableBody">
+                  <tr>
+                    <td style="font-family: var(--font-mono); font-weight: 700; color: #818CF8;">#NX-9482</td>
+                    <td><strong>Rafiqul Islam (Dhaka)</strong></td>
+                    <td style="font-weight: 700;">৳2,450</td>
+                    <td><span class="badge-status status-verified"><i class="fa-solid fa-circle-check"></i> Verified & Packed</span></td>
+                  </tr>
+                  <tr>
+                    <td style="font-family: var(--font-mono); font-weight: 700; color: #818CF8;">#NX-9481</td>
+                    <td><strong>Farzana Akter (Chittagong)</strong></td>
+                    <td style="font-weight: 700;">৳1,890</td>
+                    <td><span class="badge-status status-steadfast"><i class="fa-solid fa-truck"></i> Consignment Created</span></td>
+                  </tr>
+                  <tr>
+                    <td style="font-family: var(--font-mono); font-weight: 700; color: #818CF8;">#NX-9480</td>
+                    <td><strong>Fake Order (Blocked)</strong></td>
+                    <td style="font-weight: 700;">৳3,600</td>
+                    <td><span class="badge-status status-fraud-blocked"><i class="fa-solid fa-ban"></i> Fraud Shield Blocked</span></td>
+                  </tr>
+                  <tr>
+                    <td style="font-family: var(--font-mono); font-weight: 700; color: #818CF8;">#NX-9479</td>
+                    <td><strong>Mehedi Hasan (Sylhet)</strong></td>
+                    <td style="font-weight: 700;">৳4,200</td>
+                    <td><span class="badge-status status-pathao"><i class="fa-solid fa-motorcycle"></i> Pathao Auto Dispatched</span></td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Ecosystem Partners & Integrations Marquee -->
+  <section class="ecosystem-section">
+    <div class="container">
+      <div class="ecosystem-title">Engineered to Power Bangladesh's Top Courier & Marketing Networks</div>
+      <div class="partners-grid">
+        <div class="partner-item"><i class="fa-solid fa-truck-fast" style="color: #EF4444;"></i> Pathao Express API</div>
+        <div class="partner-item"><i class="fa-solid fa-truck" style="color: #3B82F6;"></i> Steadfast Courier</div>
+        <div class="partner-item"><i class="fa-solid fa-box" style="color: #F59E0B;"></i> RedX Logistics</div>
+        <div class="partner-item"><i class="fa-solid fa-mobile-screen-button" style="color: #E2136E;"></i> bKash Merchant</div>
+        <div class="partner-item"><i class="fa-solid fa-wallet" style="color: #F7941D;"></i> Nagad Direct</div>
+        <div class="partner-item"><i class="fa-brands fa-meta" style="color: #0668E1;"></i> Meta CAPI 100% Sync</div>
+        <div class="partner-item"><i class="fa-brands fa-google" style="color: #34A853;"></i> GA4 & GTM Server</div>
+        <div class="partner-item"><i class="fa-brands fa-tiktok" style="color: #FFF;"></i> TikTok Pixel</div>
+        <div class="partner-item"><i class="fa-solid fa-shield-halved" style="color: #10B981;"></i> SSLCommerz Verified</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Dedicated Founder Spotlight Section -->
+  <section id="founder" style="padding: 90px 0; position: relative;">
+    <div class="container">
+      <div style="background: radial-gradient(circle at 100% 0%, rgba(99, 102, 241, 0.15) 0%, rgba(13, 19, 34, 0.95) 70%); border: 1px solid rgba(99, 102, 241, 0.35); border-radius: var(--radius-xl); padding: 50px 40px; box-shadow: var(--shadow-lg);">
+        <div style="display: grid; grid-template-columns: 1fr 1.6fr; gap: 40px; align-items: center;">
+          
+          <!-- Founder Profile Card -->
+          <div style="text-align: center; background: rgba(255, 255, 255, 0.03); border: 1px solid var(--border-subtle); border-radius: var(--radius-lg); padding: 36px 24px;">
+            <div style="width: 110px; height: 110px; border-radius: 50%; background: linear-gradient(135deg, #4F46E5, #06B6D4); display: flex; align-items: center; justify-content: center; font-size: 38px; font-weight: 900; color: #FFF; margin: 0 auto 18px; box-shadow: 0 0 35px rgba(79, 70, 229, 0.6); border: 3px solid rgba(255, 255, 255, 0.25);">
+              MI
+            </div>
+            <h3 style="font-size: 24px; font-weight: 900; margin-bottom: 4px; color: var(--text-main);">Md Minhazul- Islam</h3>
+            <p style="font-size: 13.5px; font-weight: 800; color: #818CF8; text-transform: uppercase; letter-spacing: 0.08em; margin-bottom: 16px;">Founder & Chief Architect</p>
+            
+            <div style="display: inline-flex; align-items: center; gap: 6px; padding: 4px 12px; background: rgba(16, 185, 129, 0.15); border: 1px solid rgba(16, 185, 129, 0.3); border-radius: 99px; font-size: 12px; color: var(--emerald); font-weight: 700; margin-bottom: 20px;">
+              <i class="fa-solid fa-circle-check"></i> Verified Founder
+            </div>
+
+            <div style="display: flex; justify-content: center; gap: 12px;">
+              <a href="https://wa.me/8801700000000" target="_blank" rel="noopener" class="btn-secondary" style="padding: 8px 16px; font-size: 13px;">
+                <i class="fa-brands fa-whatsapp" style="color: #25D366;"></i> Direct Contact
+              </a>
+            </div>
+          </div>
+
+          <!-- Founder Note & Vision -->
+          <div>
+            <span class="section-tag"><i class="fa-solid fa-quote-left"></i> A Personal Note from the Founder</span>
+            <h2 style="font-size: clamp(26px, 3.2vw, 38px); font-weight: 900; margin: 12px 0 20px; line-height: 1.25;">
+              "We Built Nexura OS to Stop E-Commerce Losses and Empower Bangladeshi Sellers to Win."
+            </h2>
+            <div style="font-size: 15.5px; color: var(--text-secondary); line-height: 1.8; display: grid; gap: 16px;">
+              <p>
+                Having closely observed the struggles of online business owners across Bangladesh, I saw talented entrepreneurs lose up to <strong>30% of their profits</strong> simply to fake orders, serial returners (RTS fees), clunky WordPress websites that take 8 seconds to load, and broken Facebook ad pixels that fail to record sales.
+              </p>
+              <p>
+                I founded <strong>Nexura OS</strong> to change that equation forever. My goal was simple: give Bangladeshi sellers a world-class, lightning-fast <strong>Business OS</strong> that combines AI fraud protection, automated Pathao/Steadfast courier booking, and bulletproof server-side tracking inside one effortless dashboard.
+              </p>
+              <p style="color: var(--text-main); font-weight: 600;">
+                Whether you are making your very first 10 sales or shipping 1,000 parcels a day, Nexura OS is built to support your journey with zero technical friction.
+              </p>
+            </div>
+
+            <div style="margin-top: 24px; display: flex; align-items: center; gap: 14px;">
+              <div style="font-family: 'Brush Script MT', cursive, sans-serif; font-size: 28px; color: #A5B4FC;">
+                Md Minhazul- Islam
+              </div>
+              <div style="width: 1px; height: 24px; background: var(--border-subtle);"></div>
+              <span style="font-size: 13px; color: var(--text-muted);">Founder & CEO, Nexura OS</span>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Interactive ROI & Loss Prevention Calculator -->
+  <section class="calculator-section" id="calculator">
+    <div class="container">
+      <div style="text-align: center;">
+        <span class="section-tag"><i class="fa-solid fa-calculator"></i> Profit & Loss Simulator</span>
+        <h2 class="section-title" data-i18n="calc_title">Calculate Your Monthly Profit Saved</h2>
+        <p class="section-desc" style="margin: 0 auto;">See how much hard-earned revenue you are currently losing to fake orders, serial returners, and manual courier chaos.</p>
+      </div>
+
+      <div class="calc-grid">
+        <div class="calc-box">
+          <div class="calc-slider-group">
+            <div class="calc-slider-label">
+              <span data-i18n="calc_orders_label">Monthly Order Volume</span>
+              <span class="calc-slider-val" id="roiOrdersVal">1,200 Orders/mo</span>
+            </div>
+            <input type="range" class="slider-input" id="roiOrdersSlider" min="200" max="10000" step="100" value="1200">
+          </div>
+
+          <div class="calc-slider-group">
+            <div class="calc-slider-label">
+              <span data-i18n="calc_return_label">Current Cancellation / Return Rate</span>
+              <span class="calc-slider-val" id="roiReturnVal">22%</span>
+            </div>
+            <input type="range" class="slider-input" id="roiReturnSlider" min="5" max="45" step="1" value="22">
+          </div>
+
+          <div style="padding: 16px; background: rgba(255, 255, 255, 0.03); border-radius: var(--radius-md); border: 1px solid var(--border-subtle); font-size: 13px;">
+            <div style="display: flex; justify-content: space-between; margin-bottom: 8px;">
+              <span style="color: var(--text-muted);">Current Money Wasted in RTS Courier Fees:</span>
+              <strong style="color: var(--rose);" id="roiRtsLossVal">৳42,240</strong>
+            </div>
+            <div style="display: flex; justify-content: space-between;">
+              <span style="color: var(--text-muted);">Fake / Suspicious Orders Filtered:</span>
+              <strong style="color: var(--emerald);" id="roiSavedOrdersCount">180 Bad Orders Slashed</strong>
+            </div>
+          </div>
+        </div>
+
+        <div class="calc-result-box">
+          <span style="font-size: 13px; font-weight: 800; text-transform: uppercase; color: #818CF8;" data-i18n="calc_savings_title">
+            Estimated Monthly Savings With Nexura OS
+          </span>
+          <div class="calc-savings-number" id="roiSavingsNumber">৳50,400</div>
+          <p style="font-size: 14px; color: var(--text-secondary); max-width: 440px; margin: 0 auto 24px;" data-i18n="calc_savings_sub">
+            Recovered from courier RTS fees, fake phone numbers, and automated order verification.
+          </p>
+          <button class="btn-primary trigger-signup-modal">
+            <i class="fa-solid fa-shield-check"></i> Stop Wasting Money — Claim Free Trial
+          </button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Interactive Live Simulator (Fraud Check & Courier Booking) -->
+  <section class="interactive-simulator-section" id="simulator">
+    <div class="container">
+      <div style="text-align: center; margin-bottom: 40px;">
+        <span class="section-tag"><i class="fa-solid fa-gamepad"></i> Hands-On Interactive Sandbox</span>
+        <h2 class="section-title">Test Drive Nexura's Core Engines in Real-Time</h2>
+        <p class="section-desc" style="margin: 0 auto;">No signup required. Test our live Fraud Protection Scanner and 1-Click Courier Consignment Generator below.</p>
+      </div>
+
+      <div class="sim-container">
+        <div class="sim-header">
+          <div class="sim-tabs">
+            <button class="sim-tab-btn active"><i class="fa-solid fa-shield-cat"></i> Test Tool #1: FraudShield™ Phone Scanner</button>
+          </div>
+          <span style="font-size: 12px; color: var(--text-muted);"><i class="fa-solid fa-bolt"></i> Live Connected to Bangladesh Courier Database</span>
+        </div>
+
+        <div class="sim-body">
+          <div class="fraud-tester-layout">
+            <div>
+              <h3 style="font-size: 22px; font-weight: 800; margin-bottom: 8px;">Check Customer Number Risk Score</h3>
+              <p style="font-size: 14px; color: var(--text-secondary); margin-bottom: 16px;">
+                FraudShield™ analyzes historical return rates across Pathao, Steadfast, and RedX networks to alert you before you send the parcel.
+              </p>
+
+              <div class="phone-test-input-group">
+                <input type="text" class="phone-test-input" id="fraudPhoneInput" placeholder="Enter BD Phone: 017XXXXXXXX" value="01999888777">
+                <button class="btn-primary" id="fraudScanBtn">
+                  <i class="fa-solid fa-magnifying-glass"></i> Scan Phone Number
+                </button>
+              </div>
+
+              <div class="quick-sample-chips">
+                <span style="font-size: 12px; color: var(--text-muted); align-self: center;">Quick test samples:</span>
+                <button class="chip-btn chip-sample" data-phone="01999888777">🚨 Serial Returner (Fake)</button>
+                <button class="chip-btn chip-sample" data-phone="01711000111">✅ 98% Trusted Buyer</button>
+                <button class="chip-btn chip-sample" data-phone="01812345678">⚠️ Moderate Risk</button>
+              </div>
+            </div>
+
+            <!-- Real-time Scan Result Card -->
+            <div class="fraud-result-card" id="fraudResultCard">
+              <div class="risk-meter risk-danger">
+                <div>
+                  <span style="font-size: 11px; font-weight: 800; text-transform: uppercase;">FraudShield™ Assessment</span>
+                  <h4 style="font-size: 18px; font-weight: 900; margin-top: 4px;">CRITICAL FRAUD RISK</h4>
+                </div>
+                <div style="font-size: 22px; font-weight: 900; font-family: var(--font-mono);">14/100</div>
+              </div>
+              <p style="font-size: 13.5px; margin-bottom: 12px; color: var(--text-main);"><strong>Delivery History:</strong> 12.5% Delivery Success</p>
+              <p style="font-size: 13px; color: var(--text-secondary); line-height: 1.6;">
+                7 Return-To-Shield (RTS) in last 30 days. Multiple cancelled orders at doorstep across Pathao & Steadfast. <strong>Recommended Action: Require advance courier charge via bKash.</strong>
+              </p>
+            </div>
+          </div>
+
+          <!-- Divider -->
+          <div style="margin: 40px 0; border-top: 1px solid var(--border-subtle);"></div>
+
+          <!-- Courier Auto-Booking Simulator -->
+          <div>
+            <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 16px; flex-wrap: wrap; gap: 10px;">
+              <div>
+                <h3 style="font-size: 20px; font-weight: 800;">Test Tool #2: 1-Click Automated Courier Consignment</h3>
+                <p style="font-size: 13.5px; color: var(--text-secondary);">Direct API connection sends parcel info to rider app and auto-prints barcode shipping label.</p>
+              </div>
+              <div style="display: flex; gap: 10px;">
+                <select id="simCourierSelect" style="background: rgba(255,255,255,0.08); border: 1px solid var(--border-subtle); color: #FFF; padding: 8px 14px; border-radius: var(--radius-sm); font-weight: 700;">
+                  <option value="pathao">Pathao Express API</option>
+                  <option value="steadfast">Steadfast Courier API</option>
+                  <option value="redx">RedX Logistics API</option>
+                </select>
+                <button class="btn-primary" id="simCourierBookBtn" style="padding: 8px 18px; font-size: 13px;">
+                  <i class="fa-solid fa-truck-fast"></i> 1-Click Auto Dispatch
+                </button>
+              </div>
+            </div>
+
+            <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 14px;">
+              <input type="text" id="simRecipientName" class="phone-test-input" value="Nazmul Karim (Mirpur 10, Dhaka)" style="font-size: 13px;">
+              <input type="text" id="simRecipientPhone" class="phone-test-input" value="01722-998811" style="font-size: 13px;">
+              <input type="text" id="simOrderAmount" class="phone-test-input" value="৳2,450 (COD)" style="font-size: 13px;">
+            </div>
+
+            <div id="simCourierResultBox" style="display: none;"></div>
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 6 Supercharged Core Pillars -->
+  <section class="features-section" id="features">
+    <div class="container">
+      <div style="text-align: center;">
+        <span class="section-tag"><i class="fa-solid fa-cubes"></i> Everything You Need to Scale</span>
+        <h2 class="section-title">Engineered to Replace 6+ Expensive Subscriptions</h2>
+        <p class="section-desc" style="margin: 0 auto;">No more juggling Shopify, separate courier apps, messy Excel sheets, and lost ad data. Nexura OS unites everything inside one intuitive dashboard.</p>
+      </div>
+
+      <div class="features-grid">
+        <!-- Card 1 -->
+        <div class="feature-card">
+          <div class="feature-icon-box" style="background: rgba(244, 63, 94, 0.15); color: #FB7185;">
+            <i class="fa-solid fa-shield-virus"></i>
+          </div>
+          <h3 class="feature-title">FraudShield™ AI Guard</h3>
+          <p class="feature-desc">Stop fake orders, serial returners, and competitor spam bots. Device locking and automated OTP challenges save tens of thousands in wasted delivery charges.</p>
+          <ul class="feature-list">
+            <li><i class="fa-solid fa-check"></i> Bangladesh Courier Network History</li>
+            <li><i class="fa-solid fa-check"></i> IP & Device Fingerprinting Lock</li>
+            <li><i class="fa-solid fa-check"></i> Automated bKash Advance Charge Prompt</li>
+          </ul>
+        </div>
+
+        <!-- Card 2 -->
+        <div class="feature-card">
+          <div class="feature-icon-box" style="background: rgba(16, 185, 129, 0.15); color: #34D399;">
+            <i class="fa-solid fa-truck-ramp-box"></i>
+          </div>
+          <h3 class="feature-title">1-Click Courier Automation</h3>
+          <p class="feature-desc">Integrated direct APIs with Pathao, Steadfast, and RedX. Generate bulk consignments, print 4x6 thermal barcode labels, and auto-sync delivery status in real-time.</p>
+          <ul class="feature-list">
+            <li><i class="fa-solid fa-check"></i> 1-Click Bulk Consignment Creation</li>
+            <li><i class="fa-solid fa-check"></i> Auto Thermal Barcode & Invoice Printing</li>
+            <li><i class="fa-solid fa-check"></i> Live Delivery Tracking SMS to Buyers</li>
+          </ul>
+        </div>
+
+        <!-- Card 3 -->
+        <div class="feature-card">
+          <div class="feature-icon-box" style="background: rgba(6, 182, 212, 0.15); color: #22D3EE;">
+            <i class="fa-solid fa-crosshairs"></i>
+          </div>
+          <h3 class="feature-title">Pixel Pilot™ Server-Side CAPI</h3>
+          <p class="feature-desc">Say goodbye to iOS 14 ad-tracking drops. Our 100% server-side Meta Conversion API (CAPI), GA4, and TikTok pixel ensure maximum attribution and lower ad CPAs.</p>
+          <ul class="feature-list">
+            <li><i class="fa-solid fa-check"></i> 100% Server-to-Server Event Deduplication</li>
+            <li><i class="fa-solid fa-check"></i> Bypasses Ad-Blockers & Safari Tracking Limits</li>
+            <li><i class="fa-solid fa-check"></i> Boosts Facebook ROAS by up to 35%</li>
+          </ul>
+        </div>
+
+        <!-- Card 4 -->
+        <div class="feature-card">
+          <div class="feature-icon-box" style="background: rgba(79, 70, 229, 0.15); color: #818CF8;">
+            <i class="fa-solid fa-bolt-lightning"></i>
+          </div>
+          <h3 class="feature-title">0.8s Ultra-Fast Sales Funnels</h3>
+          <p class="feature-desc">Every 100ms delay costs you 7% in sales. Nexura's lightweight landing pages load under 0.8s on 4G mobile, featuring frictionless 1-page checkout and order bumps.</p>
+          <ul class="feature-list">
+            <li><i class="fa-solid fa-check"></i> 1-Page Frictionless Cash-On-Delivery Checkout</li>
+            <li><i class="fa-solid fa-check"></i> 1-Click Upsell & Quantity Discount Bundles</li>
+            <li><i class="fa-solid fa-check"></i> 99/100 Google PageSpeed Mobile Score</li>
+          </ul>
+        </div>
+
+        <!-- Card 5 -->
+        <div class="feature-card">
+          <div class="feature-icon-box" style="background: rgba(245, 158, 11, 0.15); color: #FBBF24;">
+            <i class="fa-solid fa-store"></i>
+          </div>
+          <h3 class="feature-title">ShopEngine™ Full Store OS</h3>
+          <p class="feature-desc">Multi-product catalog, color/size variant management, inventory low-stock alerts, customer CRM, discount coupons, and multi-staff role permissions.</p>
+          <ul class="feature-list">
+            <li><i class="fa-solid fa-check"></i> Real-time Stock Sync & Barcode Scanner</li>
+            <li><i class="fa-solid fa-check"></i> Custom Domain with Free Automated SSL</li>
+            <li><i class="fa-solid fa-check"></i> bKash, Nagad & Card Payment Gateways</li>
+          </ul>
+        </div>
+
+        <!-- Card 6 -->
+        <div class="feature-card">
+          <div class="feature-icon-box" style="background: rgba(168, 85, 247, 0.15); color: #C084FC;">
+            <i class="fa-solid fa-headset"></i>
+          </div>
+          <h3 class="feature-title">24/7 Bangla VIP Support</h3>
+          <p class="feature-desc">Never get stuck. Our dedicated engineering & e-commerce experts assist you via WhatsApp group, live call, and remote AnyDesk setup for domain and pixels.</p>
+          <ul class="feature-list">
+            <li><i class="fa-solid fa-check"></i> Dedicated WhatsApp Priority Group</li>
+            <li><i class="fa-solid fa-check"></i> Done-For-You Domain & CAPI Setup</li>
+            <li><i class="fa-solid fa-check"></i> Weekly E-Commerce Growth Masterclasses</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Before vs. With Nexura OS Comparison -->
+  <section class="comparison-section">
+    <div class="container">
+      <div style="text-align: center;">
+        <span class="section-tag"><i class="fa-solid fa-code-compare"></i> The Transformation</span>
+        <h2 class="section-title">Without Nexura vs. With Nexura OS</h2>
+        <p class="section-desc" style="margin: 0 auto;">See the dramatic difference in operational sanity, speed, and profitability.</p>
+      </div>
+
+      <div class="comp-table-wrapper">
+        <table class="comp-table">
+          <thead>
+            <tr>
+              <th>Workflow Task</th>
+              <th class="col-before"><i class="fa-solid fa-circle-xmark"></i> Without Nexura (Manual Chaos)</th>
+              <th class="col-with"><i class="fa-solid fa-circle-check"></i> With Nexura OS (Automated)</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><strong>Customer Order Verification</strong></td>
+              <td class="col-before">Calling every single customer manually. 20-30% fake orders slip through, losing thousands in RTS.</td>
+              <td class="col-with">FraudShield™ auto-flags bad numbers, device locks spammers, and prompts OTP verification.</td>
+            </tr>
+            <tr>
+              <td><strong>Courier Parcel Booking</strong></td>
+              <td class="col-before">Manually copying name, address, and phone into Pathao/Steadfast app one by one. Hours wasted.</td>
+              <td class="col-with">1-Click Bulk API booking. Consignment, tracking SMS, and thermal barcode slip ready in 3 seconds.</td>
+            </tr>
+            <tr>
+              <td><strong>Ad Tracking & Meta Pixel</strong></td>
+              <td class="col-before">Browser-only pixels lose 30-40% of purchase data due to iOS 14 and ad-blockers, ruining ROAS.</td>
+              <td class="col-with">Pixel Pilot™ 100% Server-Side CAPI with 9.6+ event match quality score for maximum Facebook ROAS.</td>
+            </tr>
+            <tr>
+              <td><strong>Website Speed & Checkout</strong></td>
+              <td class="col-before">Slow, clunky WordPress/WooCommerce sites taking 5-8 seconds to load on mobile with high cart abandonment.</td>
+              <td class="col-with">Ultra-fast 0.8s frictionless 1-page checkout tailored for Bangladeshi Cash-on-Delivery shoppers.</td>
+            </tr>
+            <tr>
+              <td><strong>Customer Support & Setup</strong></td>
+              <td class="col-before">Foreign software with no Bangla support or costly third-party developers charging for every small fix.</td>
+              <td class="col-with">Direct Bangla VIP support team ready on WhatsApp to handle domain, pixel, and courier configurations.</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </section>
+
+  <!-- Transparent, ROI-Driven Pricing -->
+  <section class="pricing-section" id="pricing">
+    <div class="container">
+      <div style="text-align: center;">
+        <span class="section-tag"><i class="fa-solid fa-tag"></i> Simple, Transparent Investment</span>
+        <h2 class="section-title">Choose the Right Plan to Accelerate Your Brand</h2>
+        <p class="section-desc" style="margin: 0 auto;">No hidden commissions. No surprise fees. Start risk-free with our 7-day trial.</p>
+      </div>
+
+      <!-- Monthly / Annual Toggle -->
+      <div class="pricing-toggle-wrap">
+        <div class="billing-switch">
+          <button class="switch-btn active" data-billing="monthly">Monthly</button>
+          <button class="switch-btn" data-billing="annual">Yearly</button>
+        </div>
+        <span class="discount-tag">Save 25% + 2 Months Free</span>
+      </div>
+
+      <!-- Pricing Cards Grid -->
+      <div class="pricing-grid">
+        <!-- Plan 1 -->
+        <div class="pricing-card">
+          <h3 class="plan-name">Trial X</h3>
+          <p class="plan-desc">Perfect for testing all features risk-free.</p>
+          <div class="plan-price-wrap">
+            <span class="plan-currency">৳</span>
+            <span class="plan-price">0</span>
+            <span class="plan-period">/ 7 Days</span>
+          </div>
+          <button class="btn-secondary plan-cta-btn trigger-signup-modal">Start Free Test</button>
+          <ul class="plan-features-list">
+            <li><i class="fa-solid fa-check"></i> 1 Store + 3 Ready Templates</li>
+            <li><i class="fa-solid fa-check"></i> 3,000 Page Views</li>
+            <li><i class="fa-solid fa-check"></i> Browser + Server Pixel</li>
+            <li><i class="fa-solid fa-check"></i> Basic Courier Booking</li>
+            <li><i class="fa-solid fa-check"></i> Custom Domain Support</li>
+          </ul>
+        </div>
+
+        <!-- Plan 2 -->
+        <div class="pricing-card">
+          <h3 class="plan-name">Business Launch</h3>
+          <p class="plan-desc">For serious sellers starting consistent sales.</p>
+          <div class="plan-price-wrap">
+            <span class="plan-currency">৳</span>
+            <span class="plan-price">1,490</span>
+            <span class="plan-period">/ month</span>
+          </div>
+          <button class="btn-secondary plan-cta-btn trigger-signup-modal">Launch Store</button>
+          <ul class="plan-features-list">
+            <li><i class="fa-solid fa-check"></i> 1 Store + 5 Premium Themes</li>
+            <li><i class="fa-solid fa-check"></i> 15,000 Monthly Page Views</li>
+            <li><i class="fa-solid fa-check"></i> Meta CAPI Server Tracking</li>
+            <li><i class="fa-solid fa-check"></i> FraudShield™ Phone Filter</li>
+            <li><i class="fa-solid fa-check"></i> Pathao & Steadfast Auto Dispatch</li>
+            <li><i class="fa-solid fa-check"></i> Thermal Barcode Invoices</li>
+          </ul>
+        </div>
+
+        <!-- Plan 3 (Popular) -->
+        <div class="pricing-card popular">
+          <div class="popular-badge">Most Popular Choice</div>
+          <h3 class="plan-name">Growth Accelerator</h3>
+          <p class="plan-desc">For high-converting brands scaling Facebook ads.</p>
+          <div class="plan-price-wrap">
+            <span class="plan-currency">৳</span>
+            <span class="plan-price">2,990</span>
+            <span class="plan-period">/ month</span>
+          </div>
+          <button class="btn-primary plan-cta-btn trigger-signup-modal">Accelerate Sales</button>
+          <ul class="plan-features-list">
+            <li><i class="fa-solid fa-check"></i> Unlimited Products & Orders</li>
+            <li><i class="fa-solid fa-check"></i> 50,000 Monthly Page Views</li>
+            <li><i class="fa-solid fa-check"></i> Full FraudShield™ Device & IP Lock</li>
+            <li><i class="fa-solid fa-check"></i> 100% CAPI Deduplication Engine</li>
+            <li><i class="fa-solid fa-check"></i> 1-Click Multi-Courier Auto Hub</li>
+            <li><i class="fa-solid fa-check"></i> AI Copywriter & Funnel Builder</li>
+            <li><i class="fa-solid fa-check"></i> Priority WhatsApp VIP Concierge</li>
+          </ul>
+        </div>
+
+        <!-- Plan 4 -->
+        <div class="pricing-card">
+          <h3 class="plan-name">Scale Command</h3>
+          <p class="plan-desc">For enterprise brands processing 500+ orders/day.</p>
+          <div class="plan-price-wrap">
+            <span class="plan-currency">৳</span>
+            <span class="plan-price">5,990</span>
+            <span class="plan-period">/ month</span>
+          </div>
+          <button class="btn-secondary plan-cta-btn trigger-signup-modal">Enterprise Setup</button>
+          <ul class="plan-features-list">
+            <li><i class="fa-solid fa-check"></i> Everything in Growth Plan</li>
+            <li><i class="fa-solid fa-check"></i> 250,000+ Page Views</li>
+            <li><i class="fa-solid fa-check"></i> Multi-Staff Role Permissions</li>
+            <li><i class="fa-solid fa-check"></i> Custom API Webhook Sync</li>
+            <li><i class="fa-solid fa-check"></i> Dedicated Account Manager</li>
+            <li><i class="fa-solid fa-check"></i> 99.99% Cloud SLA Guarantee</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Merchant Reviews & Testimonials -->
+  <section class="testimonials-section">
+    <div class="container">
+      <div style="text-align: center;">
+        <span class="section-tag"><i class="fa-solid fa-star"></i> Verified Social Proof</span>
+        <h2 class="section-title">Loved by Over 5,200+ Bangladeshi Entrepreneurs</h2>
+        <p class="section-desc" style="margin: 0 auto;">See how real merchants transformed their bottom line with Nexura OS.</p>
+      </div>
+
+      <div class="testimonials-grid">
+        <div class="testimonial-card">
+          <div>
+            <div class="stars-rating">
+              <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+            </div>
+            <p class="testimonial-quote">
+              "We used to lose ৳40,000 every month just from fake orders and RTS returns in our clothing business. With Nexura's FraudShield, our delivery success jumped from 72% to 94% in 30 days!"
+            </p>
+          </div>
+          <div class="author-info">
+            <div class="author-avatar">TA</div>
+            <div class="author-meta">
+              <h4>Tanvir Ahmed</h4>
+              <p>Founder, UrbanStyle BD (Dhaka)</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="testimonial-card">
+          <div>
+            <div class="stars-rating">
+              <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+            </div>
+            <p class="testimonial-quote">
+              "The Pathao and Steadfast 1-click booking is incredible. What used to take our staff 3 hours every evening now takes literally 2 minutes with automated thermal barcodes!"
+            </p>
+          </div>
+          <div class="author-info">
+            <div class="author-avatar">NJ</div>
+            <div class="author-meta">
+              <h4>Nusrat Jahan</h4>
+              <p>Co-Founder, GlamourSkin Cosmetics</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="testimonial-card">
+          <div>
+            <div class="stars-rating">
+              <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+            </div>
+            <p class="testimonial-quote">
+              "Meta Server-Side CAPI tracking increased our Facebook ad ROAS from 2.1x to 3.8x. Pixel Pilot caught every single purchase event that iOS 14 was previously blocking."
+            </p>
+          </div>
+          <div class="author-info">
+            <div class="author-avatar">SH</div>
+            <div class="author-meta">
+              <h4>Sazzad Hossain</h4>
+              <p>Managing Director, TechHive Electronics</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Comprehensive FAQ Section -->
+  <section class="faq-section" id="faq">
+    <div style="text-align: center;">
+      <span class="section-tag"><i class="fa-solid fa-circle-question"></i> Answers You Need</span>
+      <h2 class="section-title">Frequently Asked Questions</h2>
+      <p class="section-desc" style="margin: 0 auto;">Everything you need to know about setting up and growing with Nexura OS.</p>
+    </div>
+
+    <div class="faq-accordion">
+      <div class="faq-item open">
+        <button class="faq-question">
+          <span>Do I need any technical or coding knowledge to build a website?</span>
+          <span class="faq-icon"><i class="fa-solid fa-chevron-down"></i></span>
+        </button>
+        <div class="faq-answer">
+          Absolutely not! Nexura OS is a 100% no-code, done-for-you e-commerce operating system. You select a ready-made high-converting theme, upload your product images, enter your price, and your website is live in under 5 minutes.
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-question">
+          <span>How does the 1-Click Courier Integration work with Pathao & Steadfast?</span>
+          <span class="faq-icon"><i class="fa-solid fa-chevron-down"></i></span>
+        </button>
+        <div class="faq-answer">
+          You simply connect your Pathao or Steadfast API keys in Nexura OS once. When a customer places an order, click "Book Courier" — Nexura instantly calls the courier API, creates the consignment, downloads the barcode shipping slip, and sends an automated tracking SMS to the buyer.
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-question">
+          <span>How does FraudShield™ detect and block fake orders?</span>
+          <span class="faq-icon"><i class="fa-solid fa-chevron-down"></i></span>
+        </button>
+        <div class="faq-answer">
+          FraudShield cross-references the customer's phone number against historical return rate records across Bangladesh's courier ecosystem. If someone frequently refuses parcels at the doorstep or places 5 duplicate orders in 10 minutes, the system immediately flags them or prompts for an advance bKash delivery fee.
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-question">
+          <span>Can I use my own custom .com or .com.bd domain?</span>
+          <span class="faq-icon"><i class="fa-solid fa-chevron-down"></i></span>
+        </button>
+        <div class="faq-answer">
+          Yes! You can connect your existing domain or buy a new one. Nexura OS provides free automated SSL encryption, enterprise Cloudflare edge CDN, and 99.99% uptime protection.
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-question">
+          <span>Who is the founder of Nexura OS?</span>
+          <span class="faq-icon"><i class="fa-solid fa-chevron-down"></i></span>
+        </button>
+        <div class="faq-answer">
+          Nexura OS was founded and architected by <strong>Md Minhazul- Islam</strong> with the mission of providing Bangladeshi e-commerce merchants with automated enterprise technology to eliminate fake orders and scale their brands effortlessly.
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Bottom High-Converting CTA Banner -->
+  <section class="cta-banner-section" id="start">
+    <div class="container">
+      <div class="cta-banner-box">
+        <span class="hero-pill" style="margin-bottom: 16px;">
+          <span class="dot"></span> 7 Days 100% Free • No Credit Card • 60-Second Setup
+        </span>
+        <h2 style="font-size: clamp(28px, 4vw, 44px); font-weight: 900; margin-bottom: 16px;">
+          Stop Wasting Time on Manual Work.<br>
+          <span class="text-gradient">Launch Your Automated Commerce OS Today.</span>
+        </h2>
+        <p style="font-size: 16px; color: var(--text-secondary); max-width: 600px; margin: 0 auto;">
+          Join 5,200+ high-growth Bangladeshi sellers who are reducing returns, doubling ad ROAS, and scaling their sales effortlessly.
+        </p>
+
+        <form class="cta-phone-form" id="bottomCtaForm" onsubmit="event.preventDefault(); document.getElementById('signupModal').classList.add('active');">
+          <input type="tel" class="cta-phone-input" placeholder="Enter Mobile Number (01XXXXXXXXX)" required>
+          <button type="submit" class="btn-primary" style="white-space: nowrap; padding: 12px 24px;">
+            <i class="fa-solid fa-rocket"></i> Start Free Now
+          </button>
+        </form>
+
+        <div style="font-size: 12.5px; color: var(--text-muted); margin-top: 14px;">
+          <i class="fa-solid fa-lock" style="color: var(--emerald);"></i> SSL Encrypted & Verified by SSLCommerz
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Enterprise Footer -->
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <a href="index.html" class="brand-logo">
+            <div class="brand-icon">
+              <i class="fa-solid fa-cube"></i>
+            </div>
+            <div class="brand-text">
+              <div class="brand-name">Nexura OS</div>
+              <span class="brand-sub">Intelligent Commerce OS</span>
+            </div>
+          </a>
+          <p>Founded by <strong>Md Minhazul- Islam</strong>. The unified business operating system empowering modern e-commerce entrepreneurs in Bangladesh to build, protect, and scale with intelligent automation.</p>
+          <div style="display: flex; gap: 12px; margin-top: 18px;">
+            <a href="#" style="width: 36px; height: 36px; border-radius: 8px; background: rgba(255,255,255,0.06); display: flex; align-items: center; justify-content: center;"><i class="fa-brands fa-facebook-f"></i></a>
+            <a href="https://wa.me/8801700000000" target="_blank" rel="noopener" style="width: 36px; height: 36px; border-radius: 8px; background: rgba(255,255,255,0.06); display: flex; align-items: center; justify-content: center;"><i class="fa-brands fa-whatsapp"></i></a>
+            <a href="#" style="width: 36px; height: 36px; border-radius: 8px; background: rgba(255,255,255,0.06); display: flex; align-items: center; justify-content: center;"><i class="fa-brands fa-linkedin-in"></i></a>
+          </div>
+        </div>
+
+        <div class="footer-col">
+          <h4>Platform Tools</h4>
+          <ul>
+            <li><a href="features.html#fraud">FraudShield™ AI</a></li>
+            <li><a href="features.html#courier">1-Click Courier Hub</a></li>
+            <li><a href="features.html#pixel">Pixel Pilot™ CAPI</a></li>
+            <li><a href="features.html#funnel">0.8s Funnel Studio</a></li>
+            <li><a href="features.html#shop">ShopEngine Backend</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <h4>Integrations</h4>
+          <ul>
+            <li><a href="#">Pathao Express API</a></li>
+            <li><a href="#">Steadfast Courier</a></li>
+            <li><a href="#">RedX Logistics</a></li>
+            <li><a href="#">bKash Merchant Pay</a></li>
+            <li><a href="#">Nagad Gateway</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <h4>Resources</h4>
+          <ul>
+            <li><a href="templates.html">Website Demos</a></li>
+            <li><a href="#calculator">ROI Calculator</a></li>
+            <li><a href="pricing.html">Pricing Plans</a></li>
+            <li><a href="#">E-Commerce Blog</a></li>
+            <li><a href="#">Help Center (Bangla)</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <h4>Company</h4>
+          <ul>
+            <li><a href="#founder">About Founder</a></li>
+            <li><a href="#">Contact & Support</a></li>
+            <li><a href="#">Privacy Policy</a></li>
+            <li><a href="#">Terms of Service</a></li>
+            <li><a href="#">Affiliate Partner Program</a></li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <div>&copy; 2026 Nexura OS. Built & Architected by <strong>Md Minhazul- Islam</strong>. All rights reserved.</div>
+        <div class="ssl-badge-img">
+          <i class="fa-solid fa-shield-halved"></i> 256-bit Bank Grade Security • SSLCommerz Verified
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Floating Live Social Proof Toast -->
+  <div class="live-toast" id="liveToast">
+    <div class="toast-dot"></div>
+    <div>
+      <div style="font-weight: 800; color: #FFF; font-size: 13px;">New Order in Gulshan, Dhaka</div>
+      <div style="color: var(--text-secondary); font-size: 12px;">Premium Panjabi (৳3,450) • <span style="color: var(--emerald); font-weight: 700;">Pathao Auto-Booked</span></div>
+    </div>
+  </div>
+
+  <!-- Floating WhatsApp VIP Support Button -->
+  <a href="https://wa.me/8801700000000" target="_blank" rel="noopener" class="floating-whatsapp" aria-label="Chat with Md Minhazul- Islam on WhatsApp">
+    <i class="fa-brands fa-whatsapp"></i>
+  </a>
+
+  <!-- Modal: Instant 7-Day Free Trial Signup -->
+  <div class="modal-overlay" id="signupModal">
+    <div class="modal-box">
+      <button class="modal-close-btn" id="closeModalBtn" aria-label="Close dialog">
+        <i class="fa-solid fa-xmark"></i>
+      </button>
+
+      <div id="modalStep1">
+        <div style="text-align: center; margin-bottom: 24px;">
+          <div class="brand-icon" style="margin: 0 auto 14px; width: 50px; height: 50px;">
+            <i class="fa-solid fa-cube"></i>
+          </div>
+          <h3 style="font-size: 24px; font-weight: 900; margin-bottom: 6px;">Unlock Your 7-Day VIP Access</h3>
+          <p style="font-size: 14px; color: var(--text-secondary);">Start building your high-converting online store in 60 seconds.</p>
+        </div>
+
+        <form id="trialSignupForm">
+          <div style="margin-bottom: 16px;">
+            <label style="display: block; font-size: 13px; font-weight: 700; margin-bottom: 6px; color: var(--text-secondary);">
+              Your Mobile Number
+            </label>
+            <input type="tel" id="modalPhoneInput" class="phone-test-input" style="width: 100%;" placeholder="01XXXXXXXXX" value="01712345678" required>
+          </div>
+
+          <div style="margin-bottom: 20px;">
+            <label style="display: block; font-size: 13px; font-weight: 700; margin-bottom: 6px; color: var(--text-secondary);">
+              Business or Store Name
+            </label>
+            <input type="text" class="phone-test-input" style="width: 100%;" placeholder="e.g. Urban Style BD" value="My Awesome Store" required>
+          </div>
+
+          <button type="submit" class="btn-primary" style="width: 100%; padding: 14px; font-size: 15px; justify-content: center;">
+            <i class="fa-solid fa-arrow-right"></i> Continue to Instant Store Setup
+          </button>
+
+          <p style="text-align: center; font-size: 12px; color: var(--text-muted); margin-top: 14px;">
+            <i class="fa-solid fa-lock"></i> No credit card required. Free 7-day full access.
+          </p>
+        </form>
+      </div>
+
+      <!-- Step 2: Simulated OTP Verification -->
+      <div id="modalStep2" style="display: none; text-align: center;">
+        <div class="stat-icon icon-green" style="margin: 0 auto 16px; width: 54px; height: 54px; font-size: 22px;">
+          <i class="fa-solid fa-envelope-circle-check"></i>
+        </div>
+        <h3 style="font-size: 22px; font-weight: 900; margin-bottom: 8px;">Enter 4-Digit Code</h3>
+        <p style="font-size: 13.5px; color: var(--text-secondary); margin-bottom: 20px;">
+          We sent a verification code to <strong id="otpPhoneDisplay" style="color: #FFF;">01712345678</strong>
+        </p>
+
+        <div style="display: flex; justify-content: center; gap: 10px; margin-bottom: 24px;">
+          <input type="text" maxlength="1" value="8" style="width: 48px; height: 54px; text-align: center; font-size: 24px; font-weight: 900; background: rgba(255,255,255,0.06); border: 1px solid var(--border-subtle); border-radius: 8px; color: #FFF;">
+          <input type="text" maxlength="1" value="2" style="width: 48px; height: 54px; text-align: center; font-size: 24px; font-weight: 900; background: rgba(255,255,255,0.06); border: 1px solid var(--border-subtle); border-radius: 8px; color: #FFF;">
+          <input type="text" maxlength="1" value="9" style="width: 48px; height: 54px; text-align: center; font-size: 24px; font-weight: 900; background: rgba(255,255,255,0.06); border: 1px solid var(--border-subtle); border-radius: 8px; color: #FFF;">
+          <input type="text" maxlength="1" value="4" style="width: 48px; height: 54px; text-align: center; font-size: 24px; font-weight: 900; background: rgba(255,255,255,0.06); border: 1px solid var(--border-subtle); border-radius: 8px; color: #FFF;">
+        </div>
+
+        <button class="btn-primary" style="width: 100%; padding: 14px; justify-content: center;" onclick="alert('Congratulations! Your 7-day VIP Nexura OS store is ready.'); document.getElementById('signupModal').classList.remove('active');">
+          <i class="fa-solid fa-circle-check"></i> Verify & Launch Dashboard
+        </button>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- Mobile Drawer -->
+  <div class="modal-overlay" id="mobileDrawer">
+    <div style="position: absolute; top: 0; right: 0; bottom: 0; width: 300px; background: #0D1322; padding: 24px; display: flex; flex-direction: column; justify-content: space-between; border-left: 1px solid var(--border-subtle);">
+      <div>
+        <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 28px;">
+          <span style="font-weight: 800; font-size: 18px;">Navigation</span>
+          <button id="closeMobileDrawer" style="color: #FFF; font-size: 18px;"><i class="fa-solid fa-xmark"></i></button>
+        </div>
+        <div style="display: grid; gap: 14px;">
+          <a href="index.html" style="font-weight: 700; font-size: 15px; color: #818CF8;"><i class="fa-solid fa-house"></i> Home</a>
+          <a href="features.html" style="font-weight: 700; font-size: 15px;"><i class="fa-solid fa-wand-magic-sparkles"></i> Features</a>
+          <a href="templates.html" style="font-weight: 700; font-size: 15px;"><i class="fa-solid fa-palette"></i> Demos & Templates</a>
+          <a href="#founder" style="font-weight: 700; font-size: 15px;"><i class="fa-solid fa-user-tie"></i> Founder</a>
+          <a href="#calculator" style="font-weight: 700; font-size: 15px;"><i class="fa-solid fa-calculator"></i> ROI Calculator</a>
+          <a href="pricing.html" style="font-weight: 700; font-size: 15px;"><i class="fa-solid fa-tags"></i> Pricing</a>
+          <a href="#faq" style="font-weight: 700; font-size: 15px;"><i class="fa-solid fa-circle-question"></i> FAQ</a>
+        </div>
+      </div>
+      <div>
+        <button class="btn-primary trigger-signup-modal" style="width: 100%; justify-content: center; margin-bottom: 10px;">
+          <i class="fa-solid fa-rocket"></i> Start 7-Day Free
+        </button>
+        <button class="btn-secondary trigger-signup-modal" style="width: 100%; justify-content: center;">
+          <i class="fa-regular fa-user"></i> Merchant Login
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Scripts -->
+  <script src="app.js"></script>
+</body>
+</html>
